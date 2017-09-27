@@ -35,6 +35,7 @@ public class UmlSpringStateMachineApplication implements CommandLineRunner {
         builder1.configureModel().withModel().factory(usmmf1);
         StateMachine<String, String> stateMachine1 = builder1.build();
         stateMachine1.addStateListener(MyStateListener.listener());
+        stateMachine1.getExtendedState().getVariables().put("foo", "machine1");
         
         stateMachine1.start();
         
@@ -51,7 +52,7 @@ public class UmlSpringStateMachineApplication implements CommandLineRunner {
         builder2.configureModel().withModel().factory(usmmf2);
         StateMachine<String, String> stateMachine2 = builder2.build();
         stateMachine2.addStateListener(MyStateListener.listener());
-        
+        stateMachine2.getExtendedState().getVariables().put("foo", "machine2");
         stateMachine2.start();
 
     }
