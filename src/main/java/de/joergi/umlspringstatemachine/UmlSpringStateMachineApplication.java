@@ -25,7 +25,10 @@ public class UmlSpringStateMachineApplication implements CommandLineRunner {
         stateMachineOne.getExtendedState().getVariables().put("foo", "machine1");
         stateMachineOne.start();
         
-        stateMachineTwo.getExtendedState().getVariables().put("foo", "machine2");
-        stateMachineTwo.start();
+        if(stateMachineOne.isComplete()) {
+            stateMachineTwo.getExtendedState().getVariables().put("foo", (String)stateMachineOne.getExtendedState().getVariables().get("foo"));
+            stateMachineTwo.start();
+        }
+        
     }
 }

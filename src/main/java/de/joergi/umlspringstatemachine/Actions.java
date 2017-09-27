@@ -21,6 +21,9 @@ public class Actions extends StateMachineConfigurerAdapter<String, String> {
                 log.info(context.getStateMachine().getId());
                 log.info("xxxx " + (String)context.getExtendedState().getVariables().get("foo"));
                 
+                if(("machineone").equalsIgnoreCase(context.getStateMachine().getId())) {
+                    context.getExtendedState().getVariables().put("foo", "machine one finished, start machine 2");
+                }
             }
         };
     }
