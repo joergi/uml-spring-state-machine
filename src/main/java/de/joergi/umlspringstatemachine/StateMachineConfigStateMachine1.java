@@ -12,13 +12,14 @@ import org.springframework.statemachine.listener.StateMachineListenerAdapter;
 import org.springframework.statemachine.state.State;
 import org.springframework.statemachine.uml.UmlStateMachineModelFactory;
 
-@Configuration
+@Configuration(value="statemachine1")
 @EnableStateMachine
-public class StateMachineConfig extends StateMachineConfigurerAdapter<String, String> {
+public class StateMachineConfigStateMachine1 extends StateMachineConfigurerAdapter<String, String> {
 
     @Override
     public void configure(StateMachineConfigurationConfigurer<String, String> config) throws Exception {
         config.withConfiguration().autoStartup(false).listener(listener());
+        config.withConfiguration().machineId("statemachine1");
     }
 
     @Override
@@ -29,15 +30,15 @@ public class StateMachineConfig extends StateMachineConfigurerAdapter<String, St
 
     @Bean
     public StateMachineModelFactory<String, String> modelFactoryStateMachine() {
-        return new UmlStateMachineModelFactory("classpath:papyrus/new_test.uml");
+        return new UmlStateMachineModelFactory("classpath:papyrus/StateMachine1.uml");
     }
 
     @Bean
     public StateMachineListener<String, String> listener() {
         return new StateMachineListenerAdapter<String, String>() {
-            @Override
+            @Override 
             public void stateChanged(State<String, String> from, State<String, String> to) {
-                System.out.println("State change to " + to.getId());
+                System.out.println("1 - State change to " + to.getId());
             }
         };
     }
