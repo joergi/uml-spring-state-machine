@@ -5,7 +5,12 @@
       <transition xmi:type="uml:Transition" xmi:id="_X3K4EKN-EeeHApfNCf-4Pw" source="_JoDuAKN-EeeHApfNCf-4Pw" target="_KMdbkKN-EeeHApfNCf-4Pw"/>
       <transition xmi:type="uml:Transition" xmi:id="_YY7hUKN-EeeHApfNCf-4Pw" source="_KMdbkKN-EeeHApfNCf-4Pw" target="_L2XYoKN-EeeHApfNCf-4Pw"/>
       <transition xmi:type="uml:Transition" xmi:id="_Y7nXoKN-EeeHApfNCf-4Pw" source="_L2XYoKN-EeeHApfNCf-4Pw" target="_MQDrAKN-EeeHApfNCf-4Pw"/>
-      <transition xmi:type="uml:Transition" xmi:id="_ZbTkUKN-EeeHApfNCf-4Pw" source="_MQDrAKN-EeeHApfNCf-4Pw" target="_PCsKsKN-EeeHApfNCf-4Pw"/>
+      <transition xmi:type="uml:Transition" xmi:id="_ZbTkUKN-EeeHApfNCf-4Pw" source="_MQDrAKN-EeeHApfNCf-4Pw" target="_PCsKsKN-EeeHApfNCf-4Pw">
+        <effect xmi:type="uml:FunctionBehavior" xmi:id="_cBPwMKOcEeeHApfNCf-4Pw" name="sysoName">
+          <language>bean</language>
+          <body>sysoName</body>
+        </effect>
+      </transition>
       <subvertex xmi:type="uml:Pseudostate" xmi:id="_JoDuAKN-EeeHApfNCf-4Pw" name="sm2_Initial"/>
       <subvertex xmi:type="uml:State" xmi:id="_KMdbkKN-EeeHApfNCf-4Pw" name="sm2_init-state"/>
       <subvertex xmi:type="uml:State" xmi:id="_L2XYoKN-EeeHApfNCf-4Pw" name="sm2_middle2"/>
