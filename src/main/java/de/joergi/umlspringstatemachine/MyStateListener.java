@@ -6,6 +6,9 @@ import org.springframework.statemachine.listener.StateMachineListener;
 import org.springframework.statemachine.listener.StateMachineListenerAdapter;
 import org.springframework.statemachine.state.State;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Configuration
 public class MyStateListener {
 
@@ -14,7 +17,7 @@ public class MyStateListener {
       return new StateMachineListenerAdapter<String, String>() {
           @Override 
           public void stateChanged(State<String, String> from, State<String, String> to) {
-              System.out.println(  " - State change to " + to.getId());
+              log.info(  " - State change to " + to.getId());
           }
       };
   }
