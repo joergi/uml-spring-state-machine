@@ -22,13 +22,18 @@ public class UmlSpringStateMachineApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        stateMachineOne.getExtendedState().getVariables().put("foo", "machine1");
-        stateMachineOne.start();
-        
-        if(stateMachineOne.isComplete()) {
-            stateMachineTwo.getExtendedState().getVariables().put("foo", (String)stateMachineOne.getExtendedState().getVariables().get("foo"));
-            stateMachineTwo.start();
-        }
+    	synchronized (stateMachineOne) {
+    		 stateMachineOne.getExtendedState().getVariables().put("foo", "machine1");
+    	     stateMachineOne.start();
+		}
+       
+       
+        synchronized (stateMachineTwo) {
+            if(stateMachineOne.isComplete()) {
+                stateMachineTwo.getExtendedState().getVariables().put("foo", (String)stateMachineOne.getExtendedState().getVariables().get("foo"));
+                stateMachineTwo.start();
+            }
+		}
         
     }
 }

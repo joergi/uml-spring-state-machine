@@ -11,10 +11,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Configuration
 public class MyStateListener {
-
+  
   @Bean
   public static StateMachineListener<String, String> listener() {
       return new StateMachineListenerAdapter<String, String>() {
+    	  
           @Override 
           public void stateChanged(State<String, String> from, State<String, String> to) {
               log.info(  " - State change to " + to.getId());
