@@ -1,5 +1,5 @@
 # uml-spring-state-machine
-[![Build Status](https://travis-ci.org/joergi/uml-spring-state-machine.svg?branch=master)](https://travis-ci.org/joergi/uml-spring-state-machine) [![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg)]()
+[![Build Status](https://travis-ci.org/joergi/uml-spring-state-machine.svg?branch=master)](https://travis-ci.org/joergi/uml-spring-state-machine) 
 
 Two working Spring-State-Machines based only on loading two different UMLs   
 
