@@ -8,7 +8,7 @@ addons:
       secure: "mj5p5ofpQ1xBkMvfvnrrMNwefL8NE237PxI+UAorp9iYtmGlKK7zNsoMV7ypn3+sRKZlJBiJNparXVUHa0ecnVLmHtRUm1dgg+LO1LdwzWtEjzCnVPmj+Dyg45VOoq1jRixvBB7Ukb2AmWlVUcJwoHXLaxAb8jQbPgM8/abidjNlNr4SnZBkedH3ZZg7/ohUulaCN5YBtdV7GEVKZA3odpDGtY/movyuaXoLhFnWJzaadZ46tb9qOtCoR1rrM3D+lPNzKoyuo2pVvoWsolqfpBdoFopbgAC0wESx+cllkQhtLCUwBYRp8jDxvplsDbEndOvKkbw+N4pAU5ffkmlCNvogkvAjex3mUXWibtuKksog/IHTd/deapaARkWzx2wT24xCa1TpPNbLxwgLPs+Vqia+NjSOa1LArLJtc89rdAkVWtmeC22XgqigT0M0UUC3zDTmRgdhkjIqS9c8S6h+69/FtK78jx4hQGu6KVrZCJRO+NNl5zlk80uNRN7rGn2svTsQwku4dZ9PfS3yAvXHj/pbfvdJyIk4q3Tcdanj2cA8yirG+e75o9FfBh72l2LZGiW+ENqLO5v6hP/73MCyuKkqrTDqjhkmCuYqmA0QwMM+xLscKbPAtP06Y62NJBlvPD2GmJsq4sq7BFyh3BLhTOrV/7A8BRCU7JRKsJzaC2s="
 
 jdk:
-  - oraclejdk8
+  - oraclejdk9
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package dependency-check:check sonar:sonar -Dsonar.links.homepage=https://github.com/joergi/uml-spring-state-machine -Dsonar.links.scm=https://github.com/joergi/uml-spring-state-machine
 cache:
