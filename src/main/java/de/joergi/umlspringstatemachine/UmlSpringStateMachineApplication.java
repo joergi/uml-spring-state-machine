@@ -27,7 +27,6 @@ public class UmlSpringStateMachineApplication implements CommandLineRunner {
     	     stateMachineOne.start();
 		}
        
-       
         synchronized (stateMachineTwo) {
             if(stateMachineOne.isComplete()) {
                 stateMachineTwo.getExtendedState().getVariables().put("foo", (String)stateMachineOne.getExtendedState().getVariables().get("foo"));

@@ -22,7 +22,6 @@ public class StateMachineOneConfig extends StateMachineConfigurerAdapter<String,
     @Override
     public void configure(StateMachineConfigurationConfigurer<String, String> config) throws Exception {
         config.withConfiguration().autoStartup(false).listener(listener1()).machineId("machineone");
-        
     }
 
     @Override
@@ -38,8 +37,6 @@ public class StateMachineOneConfig extends StateMachineConfigurerAdapter<String,
     @Bean
     public StateMachineListener<String, String> listener1() {
         return new StateMachineListenerAdapter<String, String>() {
-            
-            
             @Override
             public void stateChanged(State<String, String> from, State<String, String> to) {
                 log.info("State 1 changed to " + to.getId());

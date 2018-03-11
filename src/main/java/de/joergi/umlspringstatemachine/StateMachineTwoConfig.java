@@ -22,14 +22,12 @@ public class StateMachineTwoConfig extends StateMachineConfigurerAdapter<String,
     @Override
     public void configure(StateMachineConfigurationConfigurer<String, String> config) throws Exception {
         config.withConfiguration().autoStartup(false).listener(listener2()).machineId("machinetwo");
-                
     }
 
     @Override
     public void configure(StateMachineModelConfigurer<String, String> model) throws Exception {
         model.withModel().factory(modelFactory2());
     }
-
     
     @Bean
     public StateMachineModelFactory<String, String> modelFactory2() {
@@ -39,8 +37,6 @@ public class StateMachineTwoConfig extends StateMachineConfigurerAdapter<String,
     @Bean
     public StateMachineListener<String, String> listener2() {
         return new StateMachineListenerAdapter<String, String>() {
-            
-            
             @Override
             public void stateChanged(State<String, String> from, State<String, String> to) {
                 log.info("State 2 changed to " + to.getId());
