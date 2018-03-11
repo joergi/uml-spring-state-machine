@@ -12,9 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 public class MyStateListener {
     
-    private MyStateListener() {
-    }
-  
   @Bean
   public static StateMachineListener<String, String> listener() {
       return new StateMachineListenerAdapter<String, String>() {
